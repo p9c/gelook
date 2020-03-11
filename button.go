@@ -3,7 +3,7 @@
 package gelook
 
 import (
-	"github.com/p9c/pod/pkg/log"
+	"github.com/p9c/logi"
 	"image"
 	"image/color"
 
@@ -15,7 +15,7 @@ import (
 	"gioui.org/op/paint"
 	"gioui.org/text"
 	"gioui.org/unit"
-	"github.com/p9c/pod/pkg/gui/controller"
+	"github.com/p9c/gel"
 )
 
 type Button struct {
@@ -60,7 +60,7 @@ func (t *DuoUItheme) IconButton(icon *DuoUIicon) IconButton {
 	}
 }
 
-func (b Button) Layout(gtx *layout.Context, button *controller.Button) {
+func (b Button) Layout(gtx *layout.Context, button *gel.Button) {
 	col := b.Color
 	bgcol := b.Background
 	hmin := gtx.Constraints.Width.Min
@@ -86,7 +86,7 @@ func (b Button) Layout(gtx *layout.Context, button *controller.Button) {
 			layout.Center.Layout(gtx, func() {
 				layout.Inset{Top: unit.Dp(10), Bottom: unit.Dp(10), Left: unit.Dp(12), Right: unit.Dp(12)}.Layout(gtx, func() {
 					paint.ColorOp{Color: col}.Add(gtx.Ops)
-					controller.Label{}.Layout(gtx, b.shaper, b.Font, b.TextSize, b.Text)
+					gel.Label{}.Layout(gtx, b.shaper, b.Font, b.TextSize, b.Text)
 				})
 			})
 			pointer.Rect(image.Rectangle{Max: gtx.Dimensions.Size}).Add(gtx.Ops)
@@ -95,7 +95,7 @@ func (b Button) Layout(gtx *layout.Context, button *controller.Button) {
 	)
 }
 
-func (b IconButton) Layout(gtx *layout.Context, button *controller.Button) {
+func (b IconButton) Layout(gtx *layout.Context, button *gel.Button) {
 	layout.Stack{}.Layout(gtx,
 		layout.Expanded(func() {
 			size := float32(gtx.Constraints.Width.Min)
@@ -137,7 +137,7 @@ func toRectF(r image.Rectangle) f32.Rectangle {
 	}
 }
 
-func drawInk(gtx *layout.Context, c controller.Click) {
+func drawInk(gtx *layout.Context, c gel.Click) {
 	d := gtx.Now().Sub(c.Time)
 	t := float32(d.Seconds())
 	const duration = 0.5
@@ -217,7 +217,7 @@ func (t *DuoUItheme) DuoUIbutton(txtFont text.Typeface, txt, txtColor, bgColor, 
 	}
 }
 
-func (b DuoUIbutton) Layout(gtx *layout.Context, button *controller.Button) {
+func (b DuoUIbutton) Layout(gtx *layout.Context, button *gel.Button) {
 	hmin := gtx.Constraints.Width.Min
 	vmin := gtx.Constraints.Height.Min
 	txColor := b.TxColor
@@ -225,9 +225,9 @@ func (b DuoUIbutton) Layout(gtx *layout.Context, button *controller.Button) {
 	if button.Hover(gtx) {
 		txColor = b.TxColorHover
 		bgColor = b.BgColorHover
-		log.INFO("")
-		log.INFO("oce")
-		log.INFO("")
+		logi.L.Info("")
+		logi.L.Info("oce")
+		logi.L.Info("")
 	}
 	layout.Stack{Alignment: layout.Center}.Layout(gtx,
 		layout.Expanded(func() {
@@ -251,7 +251,7 @@ func (b DuoUIbutton) Layout(gtx *layout.Context, button *controller.Button) {
 				layout.Inset{Top: unit.Dp(10), Bottom: unit.Dp(10), Left: unit.Dp(12), Right: unit.Dp(12)}.Layout(gtx, func() {
 
 					paint.ColorOp{Color: txColor}.Add(gtx.Ops)
-					controller.Label{
+					gel.Label{
 						Alignment: text.Middle,
 					}.Layout(gtx, b.shaper, b.Font, b.TextSize, b.Text)
 				})
@@ -262,7 +262,7 @@ func (b DuoUIbutton) Layout(gtx *layout.Context, button *controller.Button) {
 	)
 }
 
-func (b DuoUIbutton) IconLayout(gtx *layout.Context, button *controller.Button) {
+func (b DuoUIbutton) IconLayout(gtx *layout.Context, button *gel.Button) {
 	layout.Stack{Alignment: layout.Center}.Layout(gtx,
 		layout.Expanded(func() {
 			rr := float32(gtx.Px(unit.Dp(0)))
@@ -296,7 +296,7 @@ func (b DuoUIbutton) IconLayout(gtx *layout.Context, button *controller.Button) 
 	)
 }
 
-func (b DuoUIbutton) MenuLayout(gtx *layout.Context, button *controller.Button) {
+func (b DuoUIbutton) MenuLayout(gtx *layout.Context, button *gel.Button) {
 	layout.Stack{Alignment: layout.Center}.Layout(gtx,
 		layout.Expanded(func() {
 			rr := float32(gtx.Px(unit.Dp(0)))
@@ -331,7 +331,7 @@ func (b DuoUIbutton) MenuLayout(gtx *layout.Context, button *controller.Button) 
 					layout.Rigid(func() {
 						layout.Center.Layout(gtx, func() {
 							paint.ColorOp{Color: b.TxColor}.Add(gtx.Ops)
-							controller.Label{
+							gel.Label{
 								Alignment: text.Middle,
 							}.Layout(gtx, b.shaper, b.Font, unit.Dp(12), b.Text)
 						})

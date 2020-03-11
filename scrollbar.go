@@ -4,14 +4,14 @@ import (
 	"gioui.org/io/pointer"
 	"gioui.org/layout"
 	"gioui.org/unit"
-	"github.com/p9c/pod/pkg/gui/controller"
-	"github.com/p9c/pod/pkg/log"
+	"github.com/p9c/gel"
+	"github.com/p9c/logi"
 	"image"
 )
 
 var (
-	widgetButtonUp   = new(controller.Button)
-	widgetButtonDown = new(controller.Button)
+	widgetButtonUp   = new(gel.Button)
+	widgetButtonDown = new(gel.Button)
 )
 
 type ScrollBar struct {
@@ -26,7 +26,7 @@ type ScrollBar struct {
 	body       *ScrollBarBody
 	up         *ScrollBarButton
 	down       *ScrollBarButton
-	controller *controller.ScrollBar
+	controller *gel.ScrollBar
 }
 
 type ScrollBarBody struct {
@@ -48,7 +48,7 @@ type ScrollBarButton struct {
 	iconPadding float32
 }
 
-func (t *DuoUItheme) ScrollBar(c *controller.ScrollBar) *ScrollBar {
+func (t *DuoUItheme) ScrollBar(c *gel.ScrollBar) *ScrollBar {
 	buttonUp := t.IconButton(t.Icons["iconUp"])
 	buttonDown := t.IconButton(t.Icons["iconOK"])
 	up := &ScrollBarButton{
@@ -170,7 +170,7 @@ func (s *ScrollBar) bodyLayout(gtx *layout.Context, positionOffset int, scrollUn
 			)
 		})
 		s.controller.Layout(gtx)
-		log.DEBUG("RADI Constraints")
-		log.DEBUG(s.controller.BodyHeight)
+		logi.L.Info("RADI Constraints")
+		logi.L.Info(s.controller.BodyHeight)
 	}
 }

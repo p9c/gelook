@@ -2,11 +2,11 @@ package gelook
 
 import (
 	"gioui.org/layout"
-	"github.com/p9c/pod/pkg/gui/controller"
+	"github.com/p9c/gel"
 )
 
 var (
-	c *controller.ScrollBar
+	c *gel.ScrollBar
 )
 
 type item struct {
@@ -33,7 +33,7 @@ func (t *DuoUItheme) DuoUIpanel(content func()) *DuoUIpanel {
 	}
 }
 
-func (p *DuoUIpanel) Layout(gtx *layout.Context, panel *controller.Panel) {
+func (p *DuoUIpanel) Layout(gtx *layout.Context, panel *gel.Panel) {
 	layout.Flex{
 		Axis:    layout.Horizontal,
 		Spacing: layout.SpaceBetween,

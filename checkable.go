@@ -11,7 +11,7 @@ import (
 	"gioui.org/op/paint"
 	"gioui.org/text"
 	"gioui.org/unit"
-	"github.com/p9c/pod/pkg/gui/controller"
+	"github.com/p9c/gel"
 )
 
 type checkable struct {
@@ -57,7 +57,7 @@ func (c *checkable) layout(gtx *layout.Context, checked bool) {
 			layout.W.Layout(gtx, func() {
 				layout.UniformInset(unit.Dp(2)).Layout(gtx, func() {
 					paint.ColorOp{Color: c.Color}.Add(gtx.Ops)
-					controller.Label{}.Layout(gtx, c.shaper, c.Font, c.TextSize, c.Label)
+					gel.Label{}.Layout(gtx, c.shaper, c.Font, c.TextSize, c.Label)
 				})
 			})
 		}),

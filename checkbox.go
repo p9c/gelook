@@ -6,7 +6,7 @@ import (
 	"gioui.org/layout"
 	"gioui.org/text"
 	"gioui.org/unit"
-	"github.com/p9c/pod/pkg/gui/controller"
+	"github.com/p9c/gel"
 )
 
 type DuoUIcheckBox struct {
@@ -31,7 +31,7 @@ func (t *DuoUItheme) DuoUIcheckBox(label, color, iconColor string) DuoUIcheckBox
 	}
 }
 
-func (c DuoUIcheckBox) Layout(gtx *layout.Context, checkBox *controller.CheckBox) {
+func (c DuoUIcheckBox) Layout(gtx *layout.Context, checkBox *gel.CheckBox) {
 	c.layout(gtx, checkBox.Checked(gtx))
 	checkBox.Layout(gtx)
 }

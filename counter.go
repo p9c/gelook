@@ -7,7 +7,7 @@ import (
 	"gioui.org/op/paint"
 	"gioui.org/text"
 	"gioui.org/unit"
-	"github.com/p9c/pod/pkg/gui/controller"
+	"github.com/p9c/gel"
 	"strconv"
 )
 
@@ -42,7 +42,7 @@ func (t *DuoUItheme) DuoUIcounter(pageFunction func()) DuoUIcounter {
 	}
 }
 
-func (c DuoUIcounter) Layout(gtx *layout.Context, cc *controller.DuoUIcounter, label, value string) {
+func (c DuoUIcounter) Layout(gtx *layout.Context, cc *gel.DuoUIcounter, label, value string) {
 	cc.CounterInput.SetText(value)
 	hmin := gtx.Constraints.Width.Min
 	vmin := gtx.Constraints.Height.Min
@@ -90,7 +90,7 @@ func (c DuoUIcounter) Layout(gtx *layout.Context, cc *controller.DuoUIcounter, l
 								}.Layout(gtx,
 									layout.Rigid(func() {
 										paint.ColorOp{Color: HexARGB(c.TxColor)}.Add(gtx.Ops)
-										controller.Label{
+										gel.Label{
 											Alignment: text.Middle,
 										}.Layout(gtx, c.shaper, c.Font, unit.Dp(8), label)
 									}),
@@ -100,7 +100,7 @@ func (c DuoUIcounter) Layout(gtx *layout.Context, cc *controller.DuoUIcounter, l
 										c.input.Layout(gtx, cc.CounterInput)
 										for _, e := range cc.CounterInput.Events(gtx) {
 											switch e.(type) {
-											case controller.ChangeEvent:
+											case gel.ChangeEvent:
 												if i, err := strconv.Atoi(cc.CounterInput.Text()); err == nil {
 													cc.Value = i
 												}

@@ -3,7 +3,7 @@
 package gelook
 
 import (
-	"github.com/p9c/pod/pkg/gui/controller"
+	"github.com/p9c/gel"
 	"image/color"
 
 	"gioui.org/layout"

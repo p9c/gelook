@@ -3,7 +3,7 @@
 package gelook
 
 import (
-	"github.com/p9c/pod/pkg/gui/controller"
+	"github.com/p9c/gel"
 	"image/color"
 
 	"gioui.org/layout"
@@ -36,7 +36,7 @@ func (t *DuoUItheme) DuoUIeditor(hint string) DuoUIeditor {
 	}
 }
 
-func (e DuoUIeditor) Layout(gtx *layout.Context, editor *controller.Editor) {
+func (e DuoUIeditor) Layout(gtx *layout.Context, editor *gel.Editor) {
 	var stack op.StackOp
 	stack.Push(gtx.Ops)
 	var macro op.MacroOp
