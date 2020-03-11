@@ -107,7 +107,7 @@ func (c DuoUIcounter) Layout(gtx *layout.Context, cc *gel.DuoUIcounter, label, v
 											}
 										}
 										//paint.ColorOp{Color: HexARGB(c.TxColor)}.Add(gtx.Ops)
-										//controller.Label{
+										//gel.Label{
 										//	Alignment: text.Middle,
 										//}.Layout(gtx, c.shaper, c.Font, unit.Dp(12), value)
 									}))

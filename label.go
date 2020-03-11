@@ -74,6 +74,6 @@ func (t *DuoUItheme) DuoUIlabel(size unit.Value, txt string) DuoUIlabel {
 
 func (l DuoUIlabel) Layout(gtx *layout.Context) {
 	paint.ColorOp{Color: l.Color}.Add(gtx.Ops)
-	tl := controller.Label{Alignment: l.Alignment, MaxLines: l.MaxLines}
+	tl := gel.Label{Alignment: l.Alignment, MaxLines: l.MaxLines}
 	tl.Layout(gtx, l.shaper, l.Font, l.TextSize, l.Text)
 }

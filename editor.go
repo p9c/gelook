@@ -42,7 +42,7 @@ func (e DuoUIeditor) Layout(gtx *layout.Context, editor *gel.Editor) {
 	var macro op.MacroOp
 	macro.Record(gtx.Ops)
 	paint.ColorOp{Color: e.HintColor}.Add(gtx.Ops)
-	tl := controller.Label{Alignment: editor.Alignment}
+	tl := gel.Label{Alignment: editor.Alignment}
 	tl.Layout(gtx, e.shaper, e.Font, e.TextSize, e.Hint)
 	macro.Stop()
 	if w := gtx.Dimensions.Size.X; gtx.Constraints.Width.Min < w {
