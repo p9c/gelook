@@ -3,10 +3,11 @@
 package gelook
 
 import (
+	"image/color"
+
 	"gioui.org/layout"
 	"gioui.org/text"
 	"gioui.org/unit"
-	"image/color"
 )
 
 type DuoUIthemeNav struct {
@@ -16,18 +17,18 @@ type DuoUIthemeNav struct {
 	Font         text.Font
 	BgColor      color.RGBA
 	CornerRadius unit.Value
-	//Icon          *DuoUIicon
+	// Icon          *DuoUIicon
 	IcoBackground color.RGBA
 	IcoColor      color.RGBA
 	IcoPadding    unit.Value
 	IcoSize       unit.Value
 	Size          unit.Value
 	Padding       unit.Value
-	//NavButtons    map[string]*DuoUIbutton
-	//theme         DuoUItheme
+	// NavButtons    map[string]*DuoUIbutton
+	// theme         DuoUItheme
 }
 
-//func (t *DuoUItheme) DuoUIthemeNav(txt string, items *map[string]*DuoUIbutton) DuoUIthemeNav {
+// func (t *DuoUItheme) DuoUIthemeNav(txt string, items *map[string]*DuoUIbutton) DuoUIthemeNav {
 //	//for it, item := range items {
 //	//	items[it] = t.DuoUIbutton(item.Text, item.Icon)
 //	//}
@@ -44,30 +45,30 @@ type DuoUIthemeNav struct {
 //		NavButtons: *items,
 //		theme:      *t,
 //	}
-//}
+// }
 
 func (n DuoUIthemeNav) Layout(gtx *layout.Context) {
-	//navList := &layout.List{
+	// navList := &layout.List{
 	//	Axis: layout.Vertical,
-	//}
+	// }
 	//
-	//navButtons := make(map[int]layout.Widget)
+	// navButtons := make(map[int]layout.Widget)
 	//
-	//for a, b := range n.NavButtons {
+	// for a, b := range n.NavButtons {
 	//	navButtons[b.Order] = func() {
 	//		n.theme.H3(a).Layout(gtx)
 	//	}
-	//}
-	////for a, _ := range n.NavButtons {
-	////	navButtons = append(navButtons, func() {
-	////		n.theme.H3(a).Layout(gtx)
-	////	})
-	////}
-	////	navButtons := func() {
-	////		n.theme.H3("button").Layout(gtx)
-	////	}
+	// }
+	// //for a, _ := range n.NavButtons {
+	// //	navButtons = append(navButtons, func() {
+	// //		n.theme.H3(a).Layout(gtx)
+	// //	})
+	// //}
+	// //	navButtons := func() {
+	// //		n.theme.H3("button").Layout(gtx)
+	// //	}
 	//
-	//navList.Layout(gtx, 2, func(i int) {
+	// navList.Layout(gtx, 2, func(i int) {
 	//	layout.UniformInset(unit.Dp(16)).Layout(gtx, navButtons[i])
-	//})
+	// })
 }

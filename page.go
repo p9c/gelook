@@ -27,8 +27,8 @@ type DuoUIpage struct {
 func (t *DuoUItheme) DuoUIpage(txt string, border float32, command, header, body, footer func()) *DuoUIpage {
 	return &DuoUIpage{
 		Title: txt,
-		Font:  text.Font{
-			//Size: t.TextSize.Scale(14.0 / 16.0),
+		Font: text.Font{
+			// Size: t.TextSize.Scale(14.0 / 16.0),
 		},
 		TxColor:     t.Colors["Dark"],
 		BgColor:     t.Colors["Light"],
