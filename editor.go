@@ -3,8 +3,9 @@
 package gelook
 
 import (
-	"github.com/p9c/gel"
 	"image/color"
+
+	"github.com/p9c/gel"
 
 	"gioui.org/layout"
 	"gioui.org/op"

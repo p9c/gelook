@@ -3,9 +3,10 @@
 package gelook
 
 import (
-	"github.com/p9c/logi"
 	"image"
 	"image/color"
+
+	"github.com/p9c/logi"
 
 	"gioui.org/f32"
 	"gioui.org/io/pointer"

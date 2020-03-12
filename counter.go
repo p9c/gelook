@@ -1,6 +1,8 @@
 package gelook
 
 import (
+	"strconv"
+
 	"gioui.org/f32"
 	"gioui.org/layout"
 	"gioui.org/op/clip"
@@ -8,7 +10,6 @@ import (
 	"gioui.org/text"
 	"gioui.org/unit"
 	"github.com/p9c/gel"
-	"strconv"
 )
 
 type DuoUIcounter struct {
@@ -26,10 +27,10 @@ type DuoUIcounter struct {
 
 func (t *DuoUItheme) DuoUIcounter(pageFunction func()) DuoUIcounter {
 	return DuoUIcounter{
-		//ToDo Replace theme's buttons with counter exclusive buttons, set icons for increase/decrease
+		// ToDo Replace theme's buttons with counter exclusive buttons, set icons for increase/decrease
 		increase: t.DuoUIbutton("", "", "", t.Colors["Light"], "", t.Colors["Dark"], "counterPlusIcon", t.Colors["Primary"], 0, 24, 32, 32, 0, 0),
 		decrease: t.DuoUIbutton("", "", "", t.Colors["Light"], "", t.Colors["Dark"], "counterMinusIcon", t.Colors["Primary"], 0, 24, 32, 32, 0, 0),
-		//reset:        t.DuoUIbutton(t.Font.Secondary, "RESET", t.Colors["Primary"], t.Colors["Light"], t.Colors["Light"], t.Colors["Primary"], "", "", 12, 0, 0, 48, 48, 0),
+		// reset:        t.DuoUIbutton(t.Font.Secondary, "RESET", t.Colors["Primary"], t.Colors["Light"], t.Colors["Light"], t.Colors["Primary"], "", "", 12, 0, 0, 48, 48, 0),
 		input:        t.DuoUIeditor(""),
 		pageFunction: pageFunction,
 		Font: text.Font{
@@ -46,7 +47,7 @@ func (c DuoUIcounter) Layout(gtx *layout.Context, cc *gel.DuoUIcounter, label, v
 	cc.CounterInput.SetText(value)
 	hmin := gtx.Constraints.Width.Min
 	vmin := gtx.Constraints.Height.Min
-	//txColor := c.TxColor
+	// txColor := c.TxColor
 	bgColor := c.BgColor
 	layout.Stack{Alignment: layout.Center}.Layout(gtx,
 		layout.Expanded(func() {
@@ -106,21 +107,21 @@ func (c DuoUIcounter) Layout(gtx *layout.Context, cc *gel.DuoUIcounter, label, v
 												}
 											}
 										}
-										//paint.ColorOp{Color: HexARGB(c.TxColor)}.Add(gtx.Ops)
-										//gel.Label{
+										// paint.ColorOp{Color: HexARGB(c.TxColor)}.Add(gtx.Ops)
+										// gel.Label{
 										//	Alignment: text.Middle,
-										//}.Layout(gtx, c.shaper, c.Font, unit.Dp(12), value)
+										// }.Layout(gtx, c.shaper, c.Font, unit.Dp(12), value)
 									}))
 							})
 						})
 					}),
-					//layout.Flexed(0.2, func() {
+					// layout.Flexed(0.2, func() {
 					//	//for cc.CounterReset.Clicked(gtx) {
 					//	//	cc.Reset()
 					//	//	c.pageFunction()
 					//	//}
 					//	//c.reset.Layout(gtx, cc.CounterReset)
-					//}),
+					// }),
 					layout.Rigid(func() {
 						for cc.CounterIncrease.Clicked(gtx) {
 							cc.Increase()

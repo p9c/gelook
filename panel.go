@@ -46,13 +46,13 @@ func (p *DuoUIpanel) Layout(gtx *layout.Context, panel *gel.Panel) {
 			panel.VisibleHeight = gtx.Constraints.Height.Max
 		}),
 		layout.Rigid(func() {
-			//if panel.TotalOffset > 0 {
-			//p.scrollBar = t.ScrollBar(32)
+			// if panel.TotalOffset > 0 {
+			// p.scrollBar = t.ScrollBar(32)
 			p.scrollBar.Layout(gtx,
 				panel.PanelContentLayout.Position.Offset,
 				panel.ScrollUnit,
 			)
-			//}
+			// }
 		}),
 	)
 	panel.Layout(gtx)

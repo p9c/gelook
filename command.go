@@ -3,9 +3,10 @@
 package gelook
 
 import (
+	"time"
+
 	"gioui.org/layout"
 	"gioui.org/unit"
-	"time"
 )
 
 var ()

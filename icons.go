@@ -3,9 +3,10 @@
 package gelook
 
 import (
-	"github.com/p9c/gelook/ico"
 	"image"
 	"image/color"
+
+	"github.com/p9c/gelook/ico"
 
 	"gioui.org/f32"
 	"gioui.org/layout"
@@ -33,7 +34,7 @@ func NewDuoUIicons() (i map[string]*DuoUIicon) {
 	i["blocksIcon"] = mustIcon(NewDuoUIicon(icons.ActionExplore))
 	i["networkIcon"] = mustIcon(NewDuoUIicon(icons.ActionFingerprint))
 	i["traceIcon"] = mustIcon(NewDuoUIicon(icons.ActionTrackChanges))
-	//i["consoleIcon"] = mustIcon(NewDuoUIicon(icons.ActionInput))
+	// i["consoleIcon"] = mustIcon(NewDuoUIicon(icons.ActionInput))
 	i["helpIcon"] = mustIcon(NewDuoUIicon(icons.NavigationArrowDropDown))
 	i["counterPlusIcon"] = mustIcon(NewDuoUIicon(icons.ImageExposurePlus1))
 	i["counterMinusIcon"] = mustIcon(NewDuoUIicon(icons.ImageExposureNeg1))
