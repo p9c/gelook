@@ -3,7 +3,7 @@
 package gelook
 
 import (
-	"github.com/p9c/pod/pkg/gui/ico"
+	"github.com/p9c/gelook/ico"
 	"image"
 	"image/color"
 
